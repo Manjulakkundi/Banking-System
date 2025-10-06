@@ -32,7 +32,23 @@ This project is a full-stack, two-tier Secure Online Banking System designed to 
 ## 📂 Project Structure
 
 This project follows a Monorepo Architecture with separate directories for backend and frontend.
-. ├── backend/ │   ├── dataBase/         # SQL schema (bank.sql) and DB connection logic │   ├── middleware/       # JWT/Auth verification logic │   ├── routes/           # Manager.js and User.js APIs (core logic) │   ├── services/         # Authentication services │   ├── index.js          # Backend entry point │   ├── package.json      # Node.js dependencies │   └── .env              # Environment variables (DB credentials, secrets) └── frontend/ └── onlinebanking/ ├── public/       # Static assets and index.html ├── src/ │   ├── components/ # All React components (Login, Home, Admin, etc.) │   ├── utlis/      # Client-side auth helpers │   └── App.js      # Main React router setup └── package.json  # React dependencies
+.
+├── backend/
+│   ├── dataBase/         # SQL schema (bank.sql) and DB connection logic
+│   ├── middleware/       # JWT/Auth verification logic
+│   ├── routes/           # Manager.js and User.js APIs (core logic)
+│   ├── services/         # Authentication services
+│   ├── index.js          # Backend entry point
+│   ├── package.json      # Node.js dependencies
+│   └── .env              # Environment variables (DB credentials, secrets)
+└── frontend/
+    └── onlinebanking/
+        ├── public/       # Static assets and index.html
+        ├── src/
+        │   ├── components/ # All React components (Login, Home, Admin, etc.)
+        │   ├── utlis/      # Client-side auth helpers
+        │   └── App.js      # Main React router setup
+        └── package.json    # React dependencies
 
 
 
@@ -55,5 +71,6 @@ To run this project locally:
 - Ensure MySQL is running and accessible.
 - JWT secret and DB credentials must be securely stored in `.env`.
 - Admin and user roles are handled separately for enhanced security.
+
 
 
