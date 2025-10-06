@@ -1,50 +1,59 @@
-# Secure Online Banking System
+# 🏦 Secure Online Banking System (MERN-like Stack)
 
-## 🌟 Project Overview
+## 🌟 Overview
 
-This **Online Banking System** is a robust and secure web application developed using the **Flask** framework, providing users with essential banking services. The core focus of this project was to implement a secure, feature-rich application while designing and optimizing a **MySQL database** for high performance, data integrity, and security.
+This project is a full-stack, two-tier Secure Online Banking System designed to provide users with essential financial services and a dedicated administrative portal for system management. Built using Node.js, Express, React, and MySQL, it emphasizes secure data handling, modular architecture, and high performance.
+
+---
 
 ## ✨ Key Features
 
-* **💳 User Authentication:** Secure user **login** and session management.
-* **💰 Balance Inquiry:** Instant access to real-time account balances.
-* **💸 Fund Transfer:** Secure mechanism for transferring funds between accounts with validation checks.
-* **📜 Transaction History:** Comprehensive log of all past deposits, transfers, and withdrawals.
-* **🔒 Security Focus:** Designed with security best practices to protect sensitive financial data.
+| Feature Area           | Description                                                                 | Related Files                                                                 |
+|------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| **Authentication**     | Secure User and Admin login/registration with protected routes via middleware. | `middleware/auth.js`, `services/auth.js`, `components/login.js`, `components/Adminlogin.js` |
+| **Core Banking**        | User operations like balance inquiry and fund transfer via RESTful API.     | `routes/User.js`, `components/Home.js`                                        |
+| **Administrative Portal** | Admin interface for user management and system oversight.                  | `routes/Manager.js`, `components/Admin.js`                                    |
+| **Database Management** | MySQL schema optimized for account, user, and transaction integrity.        | `dataBase/bank.sql`, `dataBase/MySQL.js`                                      |
+| **Frontend Security**   | Client-side handling for unauthorized access and error routing.             | `components/Unauthorized.js`, `components/NotFound.js`                        |
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Component | Technology | Description |
-| :--- | :--- | :--- |
-| **Backend Framework** | **Flask** (Python) | Lightweight and powerful micro-framework for the application logic. |
-| **Database** | **MySQL** | Relational database management system used for persistent storage of account, user, and transaction data. |
-| **Data Integrity** | **SQLAlchemy / Raw SQL** | Used for efficient ORM and direct queries, focusing on indexed tables and optimized joins. |
-| **Environment** | **Python 3.x** | The primary programming language. |
+| Component         | Technology        | Description                                                                 |
+|------------------|-------------------|-----------------------------------------------------------------------------|
+| **Backend**       | Node.js / Express | RESTful API server for business logic and DB communication.                |
+| **Database**      | MySQL             | Relational database ensuring integrity and performance.                    |
+| **Frontend**      | React.js          | Dynamic, responsive UI built with modern JavaScript.                       |
+| **Authentication**| JWT (likely)      | Stateless authentication and session management via tokens.                |
 
 ---
 
-## ⚙️ Database Architecture & Optimization
+## 📂 Project Structure
 
-A significant achievement of this project was the design of the backend database.
+This project follows a Monorepo Architecture with separate directories for backend and frontend.
+. ├── backend/ │   ├── dataBase/         # SQL schema (bank.sql) and DB connection logic │   ├── middleware/       # JWT/Auth verification logic │   ├── routes/           # Manager.js and User.js APIs (core logic) │   ├── services/         # Authentication services │   ├── index.js          # Backend entry point │   ├── package.json      # Node.js dependencies │   └── .env              # Environment variables (DB credentials, secrets) └── frontend/ └── onlinebanking/ ├── public/       # Static assets and index.html ├── src/ │   ├── components/ # All React components (Login, Home, Admin, etc.) │   ├── utlis/      # Client-side auth helpers │   └── App.js      # Main React router setup └── package.json  # React dependencies
 
-* **Optimized Schema:** The MySQL schema was meticulously designed to ensure efficient data retrieval for features like real-time balance checks and extensive transaction history lookups.
-* **Indexing:** Strategic use of **indexing** on critical columns (like `account_id`, `user_id`, and transaction timestamps) to dramatically reduce query execution time.
-* **ACID Compliance:** Implemented **database transactions** to guarantee **data integrity** (especially for fund transfers), ensuring that money is never lost or duplicated during a process.
+
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Getting Started
 
-Follow these steps to get a local copy of the project running.
+To run this project locally:
 
-### Prerequisites
+1. Clone the repository.
+2. Set up the MySQL database using `bank.sql`.
+3. Configure environment variables in `.env`.
+4. Install dependencies in both `backend/` and `frontend/onlinebanking/`.
+5. Start the backend and frontend servers.
 
-* Python 3.x
-* MySQL Server
-* `pip` (Python package installer)
+---
 
+## 📌 Notes
 
+- Ensure MySQL is running and accessible.
+- JWT secret and DB credentials must be securely stored in `.env`.
+- Admin and user roles are handled separately for enhanced security.
 
 
